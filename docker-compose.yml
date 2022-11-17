@@ -8,7 +8,7 @@ services:
 #      - "POSTGRES_USER=odoo"
 #      - "PGDATA=/var/lib/postgresql/data/pgdata"
 #    volumes:
-#      - /srv/odoo11/db:/var/lib/postgresql/data/pgdata
+#      - odoo11_db:/var/lib/postgresql/data/pgdata
   odoo:
     build: .
 #    depends_on:
@@ -16,7 +16,7 @@ services:
     ports:
       - "8073:8069"
     environment:
-      - "HOST=odoo-db"
+      - "HOST=odoo10-db"
       - "USER=odoo"
       - "PASSWORD=password"
     volumes:
@@ -30,5 +30,6 @@ services:
 #    driver: bridge
 #    attachable: false
 volumes:
+  odoo11_db:
   odoo11_data:
   odoo11_addons:
